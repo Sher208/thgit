@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "thgit"
+version = "0.1.0"
+description = "Build your own git"
+authors = ["Sher208 <thilakrajshetty11@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.scripts]
+thgit = "thgit:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
