@@ -73,6 +73,16 @@ def write_tree(directory='.'):
 
     return data.hash_object(tree.encode(), 'tree')
 
+def commit(message):
+    commit = f'tree {write_tree()}\n'
+    commit += '\n'
+    commit += f'{message}\n'
+
+    oid = data.hash_object(commit.encode(), 'commit')
+
+    data.set_HEAD(oid)
+    return oid
+
 def is_ignored(path):
     ugit_ignore = GIT_DIR in path.split('/')
     file_ingore = GIT_IGNORE in path.split('/')

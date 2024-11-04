@@ -22,4 +22,4 @@ def read_tree(args):
     base.read_tree(args.tree)
 
 def commit(args):
-    print("Commit")
+    print(base.commit(args.message))

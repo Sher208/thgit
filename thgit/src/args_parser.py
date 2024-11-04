@@ -27,5 +27,6 @@ def parse_args():
 
     commit_parser = commands.add_parser('commit', help="Commit the application")
     commit_parser.set_defaults(func=commit)
+    commit_parser.add_argument('-m', '--message', help="Write a commit message", required=True)
 
     return parser.parse_args()
